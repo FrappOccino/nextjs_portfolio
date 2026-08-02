@@ -1,4 +1,4 @@
-import Front from "../shared/layouts/Front";
+import FrontLayout from "@/shared/layouts/Front";
 
 export default function Layout({
         children,
@@ -6,5 +6,5 @@ export default function Layout({
         children: React.ReactNode;
     }) {
     
-        return <Front>{children}</Front>;
+        return <FrontLayout>{children}</FrontLayout>;
 }
