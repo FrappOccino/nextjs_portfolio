@@ -1,3 +1,6 @@
+import { Toaster } from "sonner";
+
+
 export default function AuthLayout({
     children,
 }: {
@@ -6,6 +9,12 @@ export default function AuthLayout({
     return (
         <main className="min-h-screen flex items-center justify-center">
             {children}
+            <Toaster
+                position="top-right"
+                richColors
+                closeButton
+            />
+
         </main>
     );
 }

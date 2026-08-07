@@ -1,31 +1,54 @@
-// app/(auth)/login/actions.ts
-
 "use server";
 
-import { login } from '@/features/auth/service';
-import { redirect } from 'next/navigation';
+import { AuthError } from "next-auth";
+import { signIn, signOut } from "@/features/auth/auth";
+import { ActionResponse } from "@/shared/types/action-response";
 
+export async function logOutAction(){
+  await signOut({ redirectTo: "/login" });
+}
 
-export async function loginAction(formData: FormData) {
-  const email = formData.get("email") as string;
-  const password = formData.get("password") as string;
-
+export async function loginAction(
+  _: ActionResponse,
+  formData: FormData
+): Promise<ActionResponse> {
   try {
+    await signIn("credentials", {
+      email: formData.get("email"),
+      password: formData.get("password"),
+      // redirectTo: "/dashboard",
+      redirect: false,
+    });
 
-    const user = await login({ email: email, password: password });
-
-  } catch (error) {
-    console.error(error);
-
+    
     return {
-      success: false,
-      message: "An error occurred during login",
+      success: true,
+      message: "Login successful.",
+    };
+  } catch (error) {
+    if (error instanceof AuthError) {
+      switch (error.type) {
+        case "CredentialsSignin":
+        
+          console.log(
+            {
+              message: `Login Attempt (loginAction) Invalid email or password for ${formData.get("email")}`,
+            }
+          );
+
+          return {
+              success: false,
+              message: `Invalid credentials`,
+            };
+
+        default:
+          return {
+            success: false,
+            message: `Authentication failed for ${formData.get("email")}`,
+          };
+      }
     }
+
+    throw error;
   }
-
-  //     if(user.success){
-  //     redirect("/dasboard");
-  // }
-
-  redirect("/dashboard");
 }

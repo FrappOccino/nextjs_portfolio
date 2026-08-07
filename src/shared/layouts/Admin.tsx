@@ -1,5 +1,3 @@
-// shared/layouts/AdminLayout.tsx
-
 // import Sidebar from "../components/Sidebar";
 
 export default function AdminLayout({

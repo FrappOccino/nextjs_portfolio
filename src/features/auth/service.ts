@@ -1,5 +1,4 @@
 // features/auth/service.ts
-
 import * as repository from "./repository";
 
 type LoginInput = {
@@ -17,9 +16,6 @@ export async function login(data: LoginInput) {
             message: "Invalid credentials",
         };
     }
-
-    // Later:
-    // await bcrypt.compare(data.password, user.password);
 
     // return user;
     return {

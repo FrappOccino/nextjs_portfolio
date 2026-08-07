@@ -1,5 +1,6 @@
 import { drizzle } from "drizzle-orm/libsql";
 import * as schema from "@/db/schema/index";
+// import * as schema from "@/db/schema/schema";
 
 export const db = drizzle({
   connection: {
