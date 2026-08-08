@@ -21,7 +21,7 @@ export default function RootLayout({
     >
   {/* class="absolute inset-0 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[16px_16px]" */}
 
-      <body className="min-h-full flex flex-col ">
+      <body className="min-h-screen flex flex-col ">
         <ThemeProvider 
           attribute="data-theme"
           // defaultTheme="light"

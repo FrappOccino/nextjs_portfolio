@@ -1,6 +1,8 @@
 import { BackgroundRippleEffect } from '@/shared/components/ui/background-ripple-effect';
 import { AnimatedWorkExperiences } from '@/shared/components/AnimatedWorkExperiences';
 import { FloatingDockDemo } from '@/shared/components/FloatingIconDock';
+import { ImagesBadgeProjects } from '@/shared/components/ImageBadgeProjects';
+import { Card } from '@/shared/components/Card';
 
 export default function Home() {
     return (
@@ -59,6 +61,36 @@ export default function Home() {
                 <div className="divider"></div>
             </div>
 
+
+            <div className="w-full">
+                <h4 className="relative z-10 mx-auto max-w-4xl text-center text-xl font-bold md:text-4xl lg:text-5xl mt-30 text-violet-400">
+                    Projects
+                </h4>
+                <div className='w-full flex flex-row flex-wrap gap-5 p-5 justify-center overflow-auto h-[800px] mt-10'>
+
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
+            </div>
         </div>
     )
 }

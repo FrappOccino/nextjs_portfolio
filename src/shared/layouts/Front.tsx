@@ -9,7 +9,7 @@ export default function FrontLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="container mx-auto h-dvh">
+    <div className="container mx-auto">
       <Header />
 
       <main>{children}</main>
