@@ -11,3 +11,30 @@
   --breakpoint-xl: 80rem;   /* 1280px */
   --breakpoint-2xl: 96rem;  /* 1536px */
 }
+
+@theme inline {
+  --animate-cell-ripple: cell-ripple var(--duration, 200ms) ease-out none 1
+    var(--delay, 0ms);
+
+  @keyframes cell-ripple {
+    0% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.4;
+    }
+  }
+}
+
+
+body {
+  background-color: var(--color-base-100);
+  background-image: radial-gradient(
+    var(--color-base-300) 1px,
+    transparent 1px
+  );
+  background-size: 16px 16px;
+}
