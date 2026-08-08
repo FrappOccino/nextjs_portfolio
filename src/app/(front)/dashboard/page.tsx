@@ -1,12 +1,11 @@
 import { BackgroundRippleEffect } from '@/shared/components/ui/background-ripple-effect';
+import { AnimatedWorkExperiences } from '@/shared/components/AnimatedWorkExperiences';
+import { FloatingDockDemo } from '@/shared/components/FloatingIconDock';
 
 export default function Home() {
     return (
-        // <div className="hero bg-base-200 min-h-screen">
-
-        // </div>
         <div className="relative flex min-h-screen w-full flex-col items-start justify-start overflow-hidden">
-            
+
             <BackgroundRippleEffect />
             <div className="mt-60 w-full">
                 <h2 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold md:text-4xl lg:text-7xl ">
@@ -16,20 +15,50 @@ export default function Home() {
                     Hi, I'm Jeffrey, an Full-stack Web Developer based in Philippines
                 </h4>
             </div>
-            {/* <div className="hero-content flex-col lg:flex-row-reverse z-40 bg-blue-500">
-                <img
-                    src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-                    className="max-w-sm rounded-lg shadow-2xl"
-                />
-                <div>
-                    <h1 className="text-5xl font-bold">Box Office News!</h1>
-                    <p className="py-6">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                        quasi. In deleniti eaque aut repudiandae et a id nisi.
-                    </p>
-                    <button className="btn btn-primary">Get Started</button>
+
+
+
+            <h4 className="relative z-10 mx-auto max-w-4xl text-center text-xl font-bold md:text-4xl lg:text-5xl mt-30 text-violet-400">
+                My Professional Experience
+            </h4>
+
+            <AnimatedWorkExperiences />
+
+            <div className="flex w-full flex-col">
+                <div className="divider"></div>
+            </div>
+            <div className="w-full pl-50">
+                <h4 className="relative z-10 mt-5 w-full pr-10 text-start text-xl font-bold md:text-4xl lg:text-4xl">
+                    Frameworks
+                </h4>
+
+                <div className="w-full d-flex">
+                    <FloatingDockDemo />
                 </div>
-            </div> */}
+            </div>
+            <div className="w-full pr-50">
+                <h4 className="relative z-10 mt-5 w-full pr-10 text-right text-xl font-bold md:text-4xl lg:text-4xl">
+                    Tools
+                </h4>
+
+                <div className="mt-8 flex w-full justify-end">
+                    <FloatingDockDemo />
+                </div>
+            </div>
+            <div className="w-full pl-50">
+                <h4 className="relative z-10 mt-5 w-full pr-10 text-start text-xl font-bold md:text-4xl lg:text-4xl">
+                    Programming Languages
+                </h4>
+
+                <div className="mt-8 w-full d-flex align-items-end">
+                    <FloatingDockDemo />
+                </div>
+            </div>
+
+            <div className="flex w-full flex-col">
+                <div className="divider"></div>
+            </div>
+
         </div>
     )
 }
