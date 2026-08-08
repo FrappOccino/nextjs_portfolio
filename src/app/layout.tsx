@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import FrontLayout from "@/shared/layouts/Front";
+
 
 
 export const metadata: Metadata = {
@@ -27,7 +29,8 @@ export default function RootLayout({
           // defaultTheme="light"
           // enableSystem={false}
         >
-            {children}
+        <FrontLayout>{children}</FrontLayout>
+            
         </ThemeProvider>  
       </body>
     </html>
