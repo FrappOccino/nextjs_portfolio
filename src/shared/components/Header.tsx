@@ -11,7 +11,7 @@ export default function Header() {
                         alt="Logo"
                         width={50}
                         height={50}
-                    // className="h-8 w-auto"
+                        loading="eager"
                     />
                 </div>
                 <div className="flex-none">

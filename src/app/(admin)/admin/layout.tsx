@@ -1,4 +1,4 @@
-import FrontLayout from "@/shared/layouts/Front";
+import AdminLayout from "@/shared/layouts/Admin";
 
 export default function Layout({
         children,
@@ -6,5 +6,5 @@ export default function Layout({
         children: React.ReactNode;
     }) {
     
-        return <FrontLayout>{children}</FrontLayout>;
+        return <AdminLayout>{children}</AdminLayout>;
 }

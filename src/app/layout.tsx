@@ -21,15 +21,13 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
     >
-  {/* class="absolute inset-0 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[16px_16px]" */}
-
       <body className="min-h-screen flex flex-col ">
         <ThemeProvider 
           attribute="data-theme"
           // defaultTheme="light"
           // enableSystem={false}
         >
-        <FrontLayout>{children}</FrontLayout>
+          {children}
             
         </ThemeProvider>  
       </body>

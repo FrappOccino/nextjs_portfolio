@@ -1,17 +1,18 @@
-// import Sidebar from "../components/Sidebar";
+import Header from "@/shared/components/Header";
+import Footer from  "@/shared/components/Footer";
 
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="flex">
-      {/* <Sidebar /> */}
-
-      <main className="flex-1">
-        {children}
-      </main>
+  return (    
+    <div className="container mx-auto">
+      <Header />
+  
+        <main>{children}</main>
+  
+      {/* <Footer /> */}
     </div>
   );
 }
