@@ -1,5 +1,5 @@
 import Header from "@/shared/components/Header";
-import Footer from  "@/shared/components/Footer";
+import Sidebar from  "@/shared/components/Sidebar";
 
 export default function AdminLayout({
   children,
@@ -7,12 +7,11 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (    
-    <div className="container mx-auto">
-      <Header />
-  
+    <div className="w-full">
+      <Sidebar>
         <main>{children}</main>
+      </Sidebar>
   
-      {/* <Footer /> */}
     </div>
   );
 }

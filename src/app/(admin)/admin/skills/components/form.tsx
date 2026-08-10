@@ -61,6 +61,8 @@ export default function IconPicker() {
     }, [search]);
     return (
         <div className="w-full max-w-xl space-y-4">
+            {/* <Icon icon="material-icon-theme:vue" /> */}
+
             {/* Search */}
             <input
                 type="text"
