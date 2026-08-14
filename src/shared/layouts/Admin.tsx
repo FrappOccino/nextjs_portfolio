@@ -1,5 +1,6 @@
 import Header from "@/shared/components/Header";
 import Sidebar from  "@/shared/components/Sidebar";
+import AppToaster from "@/shared/components/AppToaster";
 
 export default function AdminLayout({
   children,
@@ -9,9 +10,9 @@ export default function AdminLayout({
   return (    
     <div className="w-full">
       <Sidebar>
-        <main>{children}</main>
+        <main className="p-5">{children}</main>
       </Sidebar>
-  
+      <AppToaster />
     </div>
   );
 }
