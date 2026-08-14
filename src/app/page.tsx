@@ -2,7 +2,7 @@ import { ContactSection } from '@/shared/components/Contact';
 import Hero from '@/shared/components/Hero';
 import Experience from '@/shared/components/Experience';
 import Projects from '@/shared/components/Projects';
-import Skills from '@/features/skills/components/Skills';
+import Skills from '@/shared/components/Skills';
 import Footer from  "@/shared/components/Footer";
 import Header from  "@/shared/components/Header";
 import FrontLayout from "@/shared/layouts/Front";
@@ -14,7 +14,7 @@ export default function Home() {
             <FrontLayout>
                 <Hero />
                 <Experience />
-                <Skills />
+                <Skills type={1} />
                 <div className="flex w-full flex-col">
                     <div className="divider"></div>
                 </div>

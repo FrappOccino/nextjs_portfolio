@@ -1,29 +1,74 @@
 import React from "react";
 import { FloatingDock } from "@/shared/components/ui/floating-dock";
-import {
-  IconBrandGithub,
-  IconBrandX,
-  IconExchange,
-  IconHome,
-  IconNewSection,
-  IconTerminal2,
-} from "@tabler/icons-react";
-import { Moon } from "lucide-react";
+import { useState , useEffect } from "react";
+import { getByType , getType } from '@/features/skills/service';
+import { Icon } from "@iconify/react";
 
-type FloatingIconDockProps = {
-  links: Array<{
+
+interface Skill {
     title: string;
-    icon: React.ReactNode;
+    icon: string;
     href: string;
-  }>;
-};
+}
+export function FloatingIconDock(props) {
+    const [skills , setSkills ] = useState<Skill[]>([]);
+    const [typeID , setTypeID ] = useState();
 
-export function FloatingIconDock({ links }: FloatingIconDockProps) {
+
+    useEffect(() => {
+        const Types = async () => {
+            const result = await getType(props.type);
+
+            console.log("type:", props.type);
+            console.log("getType result:", result);
+
+            const [res] = result;
+
+            console.log("res:", res);
+
+            if (!res) {
+                console.error(`No type found for: ${props.type}`);
+                return;
+            }
+
+            setTypeID(res.id);
+        };
+
+        Types();
+    }, [props.type]);
+
+
+    useEffect(() => {
+        const fetchSkillsData = async () => {
+            if (!typeID) return; 
+            
+            try {
+                const response = await getByType(typeID);
+                
+                const transformedSkills = response.map((skill) => ({
+                    ...skill,
+                    icon: (
+                        <Icon
+                            icon={skill.icon}
+                            width={32}
+                            height={32}
+                        />
+                    ),
+                }));
+                
+                setSkills(transformedSkills);
+            } catch (error) {
+                console.error("Error fetching skills:", error);
+            }
+        };
+    
+        fetchSkillsData();
+    }, [typeID])
   return (
     <div className="flex items-center mt-5">
       <FloatingDock
-        mobileClassName="translate-y-20" // only for demo, remove for production
-        items={links}
+        mobileClassName="translate-y-20"
+        items={skills}
       />
     </div>
   );
