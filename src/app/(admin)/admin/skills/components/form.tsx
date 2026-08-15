@@ -130,11 +130,11 @@ export default function Form() {
                     <input
                         type="url"
                         name="href"
-                        // required
+                        required
                         placeholder="https://"
                         defaultValue="#"
-                        // pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9\-].*[a-zA-Z0-9])?\.)+[a-zA-Z].*$"
-                        // title="Must be valid URL"
+                        pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9\-].*[a-zA-Z0-9])?\.)+[a-zA-Z].*$"
+                        title="Must be valid URL"
                     />
                     </label>
                 </div>

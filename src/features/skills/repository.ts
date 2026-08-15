@@ -37,6 +37,27 @@ export class SkillRepository
         console.log("getAllType repo response :", res);
         return res;
     }
+
+    async getAllWithType(){
+        const res = await db.select({
+            id: skills.id,
+            title: skills.title,
+            icon: skills.icon,
+            href: skills.href,
+            type: {
+                id: skill_types.id,
+                type: skill_types.type,
+            },
+        })
+        .from(skills)
+        .leftJoin(
+            skill_types,
+            eq(skills.type, skill_types.id)
+        );
+
+        console.log("getAllWithType repo response :", res);
+        return res;
+    }
     
 }
 

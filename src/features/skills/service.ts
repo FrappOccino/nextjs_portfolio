@@ -3,8 +3,11 @@
 import { skillRepository } from "@/features/skills/repository";
 
 export async function getSkills() {
-    return await skillRepository.findAll();
+    return await skillRepository.getAllWithType();
 }
+// export async function getSkills() {
+//     return await skillRepository.findAll();
+// }
 
 export async function createSkill(data : any ) {
     return await skillRepository.create(data);
@@ -29,4 +32,15 @@ export async function getAllType() {
     const response = await skillRepository.getAllType();
     console.log("getType response :", response);
     return response;
+}
+
+export async function deleteSkill(id: number) {
+    console.log("deleteSkill ID:", id);
+
+    await skillRepository.delete(id);
+
+    return {
+        success: true,
+        message: "Skill deleted successfully",
+    };
 }

@@ -3,34 +3,75 @@
 import { useEffect, useMemo, useState } from "react";
 import { AllCommunityModule, ColDef } from "ag-grid-community";
 import { AgGridProvider, AgGridReact } from "ag-grid-react";
-import { getSkills } from "@/features/skills/service";
-import Link from 'next/link'
+import { getSkills , deleteSkill  } from "@/features/skills/service";
+import Link from 'next/link';
+import { Icon } from "@iconify/react";
 
 
-interface SkillRow {
-  id: number;
-  title: string | null;
-  href: string | null;
-  icon: string | null;
-  type: number | null;
-}
+
+
+
+const renderIcon = (props) => {
+    return (
+        <div className="flex h-full w-full items-center justify-center">
+            <Icon icon={props.data.icon} width={20} height={20}   />  
+        </div>
+    );
+};
 
 export default function Page() {
-  const [rowData, setRowData] = useState<SkillRow[]>([]);
+  const [rowData, setRowData] = useState([]);
 
-  const colDefs: ColDef<SkillRow>[] = [
-    { field: "id" },
-    { field: "title" },
-    { field: "href" },
-    { field: "icon" },
-    { field: "type" },
+  const deleteSkillAction = async (id) => {
+    console.log("deleteSkillAction ID:" , id);
+    try {
+      await deleteSkill(id);
+
+      // Remove the deleted row from the UI
+      setRowData((currentRows) =>
+        currentRows.filter((row) => row.id !== id)
+      );
+    } catch (error) {
+      console.error("Failed to delete skill:", error);
+    }
+  };
+
+  const CustomButtonComponent = (props) => {
+    return (
+              <button onClick={() => deleteSkillAction(props.data.id)} className="btn btn-xs btn-error">delete</button>
+      );
+  };
+
+  const colDefs = [
+    { 
+      field: "id" 
+    },
+    {
+      field: "title" 
+    },
+    {
+      field: "href" 
+    },
+    {
+      headerName: "Icon",
+      cellRenderer: renderIcon,
+    },
+    {
+      field: "Type",
+      valueGetter: row => row.data.type.type + ' - ID: ' + row.data.type.id,
+    },
+    {
+      headerName: "action",
+      // valueGetter: row => row.data.id + row.data.title, 
+      cellRenderer: CustomButtonComponent
+    },
   ];
 
   useEffect(() => {
     async function loadSkills() {
       const res = await getSkills();
 
-      // console.log("Skills:", res);
+      console.log("Skills:", res);
 
       setRowData(res);
     }
@@ -60,7 +101,7 @@ export default function Page() {
 
       <AgGridProvider modules={[AllCommunityModule]}>
         <div className="h-100">
-          <AgGridReact<SkillRow>
+          <AgGridReact
             rowData={rowData}
             columnDefs={colDefs}
             pagination={true}
@@ -68,6 +109,7 @@ export default function Page() {
           />
         </div>
       </AgGridProvider>
+      <button onClick={() => deleteSkillAction(12)}> delete </button>
     </div>
   );
 }

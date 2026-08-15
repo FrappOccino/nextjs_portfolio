@@ -68,9 +68,8 @@ export abstract class BaseRepository<TTable extends Record<string, any>> {
                     (this.table as any).id,
                     id
                 )
-            )
-            .returning();
+            );
 
-        return result[0];
+        return result;
     }
 }
