@@ -70,19 +70,26 @@ export default function IconPicker() {
                 className="input input-bordered w-full"
             />
 
-            {/* Selected */}
             {selected && (
-                <div className="flex items-center gap-3 rounded-lg border p-3">
-                    <Icon icon={selected} width={32} height={32} />
+                <div>
+                    <div className="flex items-center gap-3 rounded-lg border p-3">
+                        <Icon icon={selected} width={32} height={32} />
 
-                    <div>
-                        <p className="font-medium">Selected icon</p>
-                        <p className="text-sm opacity-60">{selected}</p>
+                        <div>
+                            <p className="font-medium">Selected icon</p>
+                            <p className="text-sm opacity-60">{selected}</p>
+                        </div>
                     </div>
+                    <input
+                        name="icon"
+                        type="text"
+                        value={selected}
+                        hidden    
+                    />
                 </div>
             )}
 
-            {/* Results */}
+
             <div className="grid grid-cols-4 gap-2">
                 {results.slice(0,10).map((icon) => {
                     const iconName = `${icon.prefix}:${icon.name}`;
@@ -92,7 +99,6 @@ export default function IconPicker() {
                             key={iconName}
                             type="button"
                             onClick={() => setSelected(iconName)}
-                            // className="flex flex-col items-center gap-2 rounded-lg border p-4 hover:bg-base-200"
                         >
                             <Icon
                                 icon={iconName}
@@ -100,9 +106,6 @@ export default function IconPicker() {
                                 height={32}
                             />
 
-                            {/* <span className="truncate text-xs">
-                                {icon.name}
-                            </span> */}
                         </button>
                     );
                 })}

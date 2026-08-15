@@ -23,3 +23,10 @@ export async function getType(type: string) {
     console.log("getType response :", response);
     return response;
 }
+
+export async function getAllType() {
+
+    const response = await skillRepository.getAllType();
+    console.log("getType response :", response);
+    return response;
+}

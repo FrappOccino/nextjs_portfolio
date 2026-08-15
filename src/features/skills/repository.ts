@@ -30,6 +30,13 @@ export class SkillRepository
         console.log("getType repo response :", res);
         return res;
     }
+
+    async getAllType(){
+        const res = await db.select().from(skill_types);
+
+        console.log("getAllType repo response :", res);
+        return res;
+    }
     
 }
 
