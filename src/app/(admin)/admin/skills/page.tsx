@@ -109,7 +109,6 @@ export default function Page() {
           />
         </div>
       </AgGridProvider>
-      <button onClick={() => deleteSkillAction(12)}> delete </button>
     </div>
   );
 }

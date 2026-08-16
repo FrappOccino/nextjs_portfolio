@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Hammer , Home , LayoutDashboard  } from 'lucide-react';
+import { Hammer , Home , LayoutDashboard, FolderTree  } from 'lucide-react';
 import ThemeToggle from "@/shared/components/ThemeToggle";
 
 export default function Sidebar({
@@ -49,9 +49,15 @@ export default function Sidebar({
                             </Link>
                         </li>
                         <li>
-                            <Link href="/admin/skills" className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Settings">
+                            <Link href="/admin/skills" className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Skill">
                                 <Hammer size={20}/>
                                 <span className="is-drawer-close:hidden">Skills</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/admin/projects" className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Projects">
+                                <FolderTree size={20}/>
+                                <span className="is-drawer-close:hidden">Projects</span>
                             </Link>
                         </li>
                     </ul>

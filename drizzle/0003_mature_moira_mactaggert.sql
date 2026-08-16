@@ -1,0 +1,1 @@
+ALTER TABLE `projects` RENAME COLUMN "type" TO "thumb_nail";

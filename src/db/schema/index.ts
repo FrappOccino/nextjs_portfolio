@@ -3,3 +3,4 @@
 export * from "./authentication_tables";
 export * from "./skills";
 export * from "./skill_types";
+export * from "./projects";

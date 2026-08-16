@@ -14,7 +14,7 @@ export default function Home() {
             <FrontLayout>
                 <Hero />
                 <Experience />
-                <Skills type={1} />
+                <Skills />
                 <div className="flex w-full flex-col">
                     <div className="divider"></div>
                 </div>
