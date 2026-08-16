@@ -24,7 +24,7 @@ export default function Form() {
         initialState
     );
 
-    const [types , setTypes] = useState([]);
+    const [types , setTypes] = useState<any[]>([]);
     const [search, setSearch] = useState("");
     const [results, setResults] = useState<IconResult[]>([]);
     const [selected, setSelected] = useState("");

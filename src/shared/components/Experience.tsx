@@ -1,5 +1,5 @@
 import { AnimatedWorkExperiences } from '@/shared/components/AnimatedWorkExperiences';
-import { FloatingDockDemo } from '@/shared/components/FloatingIconDock';
+// import { FloatingDockDemo } from '@/shared/components/FloatingIconDock';
 
 export default function Experience() {
   return (

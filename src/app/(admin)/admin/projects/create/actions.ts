@@ -10,9 +10,12 @@ export async function createAction(
     formData: FormData
 ): Promise<ActionResponse> {
     try {
-        console.log(formData);
         const file = formData.get("thumb_nail");
-        console.log(file.name);
+    
+        if (!(file instanceof File)) {
+            throw new Error("Thumbnail is required.");
+        }
+
         await createProject({
             
                 title: formData.get("title"),
