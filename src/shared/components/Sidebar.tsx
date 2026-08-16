@@ -41,13 +41,13 @@ export default function Sidebar({
                             </Link>
 
                         </li>
-
+{/* 
                         <li>
                             <Link href="/admin/dashboard" className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Settings">
                                 <LayoutDashboard size={20}/>
                                 <span className="is-drawer-close:hidden">Dashboard</span>
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link href="/admin/skills" className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Skill">
                                 <Hammer size={20}/>

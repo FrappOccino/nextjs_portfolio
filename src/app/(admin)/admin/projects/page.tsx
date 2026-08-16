@@ -10,16 +10,18 @@ import Image from 'next/image'
 
 
 const ThumbnailImage = (props) => {
-  return(
-    <Image
-      src={"/projects/" + props.data.thumb_nail}
-      width={100}
-      height={100}
-      alt="Picture of the author"
-    />
+  return (
+    <div className="flex items-center justify-center h-full">
+      <Image
+        src={`/projects/${props.data.thumb_nail}`}
+        width={100}
+        height={100}
+        alt={props.data.title ?? "Project thumbnail"}
+        className="w-[100px] h-[100px] object-cover"
+      />
+    </div>
   );
 };
-
 export default function Page() {
   const [rowData, setRowData] = useState([]);
 
