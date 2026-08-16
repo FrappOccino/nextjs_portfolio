@@ -14,7 +14,7 @@ const ThumbnailImage = (props : ICellRendererParams) => {
   return (
     <div className="flex items-center justify-center h-full">
       <Image
-        src={`/projects/${props.data.thumb_nail}`}
+        src={props.data.thumb_nail}
         width={100}
         height={100}
         alt={props.data.title ?? "Project thumbnail"}

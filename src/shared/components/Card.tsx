@@ -8,7 +8,7 @@ export function Card(props : any) {
         <div className="card bg-base-100 w-96 shadow-sm h-100 border">
             <figure>
                 <img
-                    src={`/projects/${props.thumb_nail}`}
+                    src={props.thumb_nail}
                     alt="Thumbnail"
                 />
             </figure>
