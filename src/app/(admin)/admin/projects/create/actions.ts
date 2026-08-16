@@ -4,6 +4,8 @@ import type { ActionResponse } from "@/shared/types/action-response";
 import { createProject } from "@/features/projects/service";
 import { writeFile } from "fs/promises"
 import path from "path"
+import { put } from "@vercel/blob";
+
 
 export async function createAction(
     _: ActionResponse,
@@ -14,22 +16,31 @@ export async function createAction(
     
         if (!(file instanceof File)) {
             throw new Error("Thumbnail is required.");
-        }
+        }    
 
-        await createProject({
-            
-                title: formData.get("title"),
-                link: formData.get("link"),
-                description: formData.get("description"),
-                thumb_nail: file.name,
-                        
+        // Upload to Vercel Blob
+        const blob = await put(
+            `projects/${file.name}`,
+            file,
+            {
+                access: "public",
             }
         );
 
-        const bytes = await file.arrayBuffer()
-        const buffer = Buffer.from(bytes)
-        const filePath = path.join(process.cwd(), "public/projects", file.name)
-        await writeFile(filePath, buffer)
+
+        // Save the Blob URL in  database
+        await createProject({
+            title: formData.get("title"),
+            link: formData.get("link"),
+            description: formData.get("description"),
+            thumb_nail: blob.url,
+        });
+
+
+        // const bytes = await file.arrayBuffer()
+        // const buffer = Buffer.from(bytes)
+        // const filePath = path.join(process.cwd(), "public/projects", file.name)
+        // await writeFile(filePath, buffer)
     
         return {
             success: true,
