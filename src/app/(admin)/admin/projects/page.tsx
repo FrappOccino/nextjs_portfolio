@@ -7,9 +7,10 @@ import { getProjects   } from "@/features/projects/service";
 import Link from 'next/link';
 import { Icon } from "@iconify/react";
 import Image from 'next/image'
+import { ICellRendererParams } from "ag-grid-community";
 
 
-const ThumbnailImage = (props) => {
+const ThumbnailImage = (props : ICellRendererParams) => {
   return (
     <div className="flex items-center justify-center h-full">
       <Image
@@ -22,8 +23,9 @@ const ThumbnailImage = (props) => {
     </div>
   );
 };
+
 export default function Page() {
-  const [rowData, setRowData] = useState([]);
+  const [rowData, setRowData] = useState<any[]>([]);
 
 
   const colDefs = [

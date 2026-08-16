@@ -10,9 +10,9 @@ interface Skill {
     icon: string;
     href: string;
 }
-export function FloatingIconDock(props) {
-    const [skills , setSkills ] = useState<Skill[]>([]);
-    const [typeID , setTypeID ] = useState();
+export function FloatingIconDock(props : any) {
+    const [skills , setSkills ] = useState<any[]>([]);
+    const [typeID , setTypeID ] = useState(0);
 
 
     useEffect(() => {
@@ -49,7 +49,7 @@ export function FloatingIconDock(props) {
                     ...skill,
                     icon: (
                         <Icon
-                            icon={skill.icon}
+                            icon={skill.icon ??  "mdi:help-circle"}
                             width={32}
                             height={32}
                         />

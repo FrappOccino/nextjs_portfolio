@@ -42,23 +42,23 @@ export abstract class BaseRepository<TTable extends Record<string, any>> {
         return result;
     }
 
-    async update(
-        id: number,
-        data: Record<string, unknown>
-    ) {
-        const result = await this.db
-            .update(this.table as any)
-            .set(data)
-            .where(
-                eq(
-                    (this.table as any).id,
-                    id
-                )
-            )
-            .returning();
+    // async update(
+    //     id: number,
+    //     data: Record<string, unknown>
+    // ) {
+    //     const result = await this.db
+    //         .update(this.table as any)
+    //         .set(data)
+    //         .where(
+    //             eq(
+    //                 (this.table as any).id,
+    //                 id
+    //             )
+    //         )
+    //         .returning();
 
-        return result[0];
-    }
+    //     return result[0];
+    // }
 
     async delete(id: number) {
         const result = await this.db

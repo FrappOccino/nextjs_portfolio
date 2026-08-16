@@ -2,7 +2,7 @@
 import Image from 'next/image'
 
 
-export function Card(props) {
+export function Card(props : any) {
 
     return (
         <div className="card bg-base-100 w-96 shadow-sm h-100 border">

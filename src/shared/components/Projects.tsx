@@ -5,7 +5,7 @@ import { Card } from '@/shared/components/Card';
 import { useEffect, useState } from 'react';
 
 export default function Projects() {
-  const [projects , setProjects] = useState([]);
+  const [projects , setProjects] = useState<any[]>([]);
 
   useEffect(() => {
     const  fetchProjects = async ()  => {
