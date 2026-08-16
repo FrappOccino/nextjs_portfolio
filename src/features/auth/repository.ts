@@ -1,10 +1,11 @@
 import { eq } from "drizzle-orm";
 import { and } from "drizzle-orm";
 import { db } from "@/db";
-import { usersTable } from "@/db/schema/index";
+import { users as usersTable }  from "@/db/schema/user";
 import bcrypt from "bcryptjs";
 
 export async function findByEmail(email: string) {
+  console.log("FIND BY EMAIL REPOSITORY :", email);
   const [user] = await db
     .select()
     .from(usersTable)

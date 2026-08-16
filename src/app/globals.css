@@ -52,3 +52,16 @@ body {
   );
   background-size: 16px 16px;
 }
+
+.ag-header-cell-text {
+    color: var(--color-base-content);
+}
+
+body {
+    /* override value of backgroundColor, foregroundColor and spacing parameters */
+    --ag-background-color: var(--color-base-100);
+    --ag-foreground-color:  var(--color-base-content);
+    /* --ag-spacing: 4px; */
+    /* use dark scrollbars */
+    /* --ag-browser-color-scheme: dark; */
+}

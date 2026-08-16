@@ -24,7 +24,7 @@ export default function LoginForm() {
         if (state.success) {
             notification.success(state.message);
             setTimeout(() => {
-                router.push("/dashboard");
+                router.push("/admin");
             }, 1000);
         } else {
             notification.error(state.message);
