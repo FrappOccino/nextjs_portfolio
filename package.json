@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.11.3",
+    "@emailjs/browser": "^4.4.1",
     "@iconify-react/logos": "^1.0.4",
     "@iconify/react": "^6.0.2",
     "@libsql/client": "^0.17.4",
