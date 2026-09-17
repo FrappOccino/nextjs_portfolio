@@ -4,28 +4,28 @@ export function AnimatedWorkExperiences() {
     const testimonials = [
         {
             quote:
-                "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
+                "Led a 500+ member guild and 32-person team, contributing to $2.5M in revenue within seven months. Managed operations, sales data, and reporting to support data-driven decision-making.",
             name: "NFT Administrator",
             designation: "MIX",
             src: "/nft_admin.png",
         },
         {
             quote:
-                "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
+                "Provided end-to-end IT support, troubleshooting hardware and software issues while maintaining reliable Microsoft-based environments. Helped minimize technical disruptions and keep daily operations running smoothly.",
             name: "IT support Intern",
             designation: "GoBeyondLimits OutSourcing",
             src: "/it_support.png",
         },
         {
             quote:
-                "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+                "Built AI-powered and full-stack enterprise solutions serving 5,000+ users, including systems that reduced response times by 40% and operational costs by 95%. Delivered scalable integrations and reusable components that transformed manual processes into automated workflows.",
             name: "Junior Software Engineer",
             designation: "Avvanz Inc",
             src: "/junior_software_engineer.png",
         },
         {
             quote:
-                "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
+                "Develop enterprise software and audit-ready history systems that improve data traceability, accountability, and stakeholder visibility. Lead feature development while mentoring developers and collaborating with cross-functional teams.",
             name: "Software Engineer",
             designation: "Qstrike Innovations Phils., OPC.",
             src: "/software_engineer.png",
